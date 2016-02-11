@@ -24,7 +24,7 @@ app.config(["$routeProvider",function($routeProvider){
 			controller: "UserShowController"
 		}).
 		when("/users/:id/edit",{
-			templateUrl: "views/users/_form.html",
+			templateUrl: "views/users/form.html",
 			controller: "UserEditController"
 		}).
 		otherwise({
@@ -35,6 +35,6 @@ app.config(["$routeProvider",function($routeProvider){
 app.directive("notFound", function() {
     return {
 	 	restrict : "E",
-        templateUrl : "views/_notFound.html"
+        templateUrl : "views/notFound.html"
     };
 });
