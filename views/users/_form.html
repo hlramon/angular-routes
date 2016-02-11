@@ -1,0 +1,51 @@
+<div class="container">
+	<h2>{{title}}</h2>
+	<div class="row">
+		<form name="userForm" ng-submit="userForm.$valid && submit()" class="col s12" novalidate>
+			<div class="row">
+				<div class="input-field col s6">
+					<i class="material-icons prefix">account_box</i>
+					<input id="username" ng-model="user.username" type="text" class="validate" required>
+					<label for="username" class="active"><span>Username</span></label>
+				</div>
+				<div class="input-field col s6">
+					<i class="material-icons prefix">account_circle</i>
+					<input id="name" ng-model="user.name" type="text" class="validate" required>
+						<label for="name" class="active"><span>Name</span></label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<i class="material-icons prefix">email</i>
+					<input id="email" ng-model="user.email" type="email" class="validate" required>
+					<label for="email" class="active" data-error="invalid email"><span>Email</span></label>
+				</div>
+				<div class="input-field col s6">
+					<i class="material-icons prefix">phone</i>
+					<input id="phone" ng-model="user.phone" type="text" class="validate" required>
+					<label for="phone" class="active"><span>Phone</span></label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s6">
+					<i class="material-icons prefix">location_city</i>
+					<input id="city" ng-model="user.address.city" type="text" class="validate" required>
+					<label for="city" class="active"><span>City</span></label>
+				</div>
+				<div class="input-field col s6">
+					<i class="material-icons prefix">my_location</i>
+					<input id="street" ng-model="user.address.street" type="text" class="validate" required>
+					<label for="street" class="active"><span>Street</span></label>
+				</div>				
+			</div>
+			<div class="container">
+				<div class="row center-align">
+						<a href="#/users/" class="waves-effect waves-light btn red lighten-2"><i class="material-icons left">chevron_left</i>Back</a>
+						<button class="btn waves-effect waves-light" ng-class="{disabled:!userForm.$valid}" type="submit">
+							Save<i class="material-icons right">save</i>
+						</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

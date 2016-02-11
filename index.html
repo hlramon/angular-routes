@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="angular-routes">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta charset="UTF-8">
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+	<!--Let browser know website is optimized for mobile-->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.5.0/angular-resource.min.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.5.0/angular-route.min.js"></script>
+	<script type="text/javascript" src="js/jquery-init.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/controllers.js"></script>
+	<script type="text/javascript" src="js/services.js"></script>
+	<title>Angular - Routes</title>
+</head>
+<body>
+	<nav>
+		<div class="nav-wrapper teal">
+			<a href="#/" class="brand-logo">Logo</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a href="#/users">Users</a></li>
+				<li><a href="#/posts">Posts</a></li>
+			</ul>
+		</div>
+	</nav>
+	
+	<div id="main" ng-view></div>
+	
+	<div id="progress" class="progress hide">
+		<div class="indeterminate"></div>
+	</div>
+	<not-found></not-found>
+</body>
+</html>

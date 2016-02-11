@@ -1,0 +1,33 @@
+<div id="user-show" class="container">
+	<h2>Username: {{user.username}}</h2>
+	<ul class="collection">
+		<li class="collection-item avatar">
+			<i class="material-icons circle blue">account_box</i>
+			<span class="title">Name</span>
+			<p>{{user.name}}</p>
+		</li>
+		<li class="collection-item avatar">
+			<i class="material-icons circle red">email</i>
+			<span class="title">Email</span>
+			<p>{{user.email}}</p>
+		</li>
+		<li class="collection-item avatar">
+			<i class="material-icons circle green">phone</i>
+			<span class="title">Phone</span>
+			<p>{{user.phone}}</p>
+		</li>
+		<li class="collection-item avatar">
+			<i class="material-icons circle">my_location</i>
+			<span class="title">Address</span>
+			<p>
+			City: {{user.address.city}}<br>
+			Street: {{user.address.street}}
+			</p>
+		</li>
+	</ul>
+	<div class="container">
+	 	<div class="row">
+			<a href="#/users/" class="waves-effect waves-light btn red lighten-2"><i class="material-icons left">chevron_left</i>Back</a>
+	 	</div>
+ 	</div> 
+</div>

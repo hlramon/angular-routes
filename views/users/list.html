@@ -1,0 +1,66 @@
+<div class="container">	
+	<h1>Users</h1>
+	<div id="users" class="col s12">
+	  <div class="row">
+	    <div class="col s3 offset-s1">
+	      <label>users per page</label>
+	      <select class="browser-default" name="usersPerPage" id="usersPerPage" ng-model="usersPerPage" ng-change="filter()">
+	        <option ng-repeat="option in [1,2,3,4,5,6,7,8,9,10] track by $index" value="{{option}}">{{option}}</option>
+	      </select>       
+	    </div>
+	    <div class="input-field col s3 offset-s1">
+	      <i class="material-icons prefix">search</i>
+	      <input type="text" id="search" ng-model="search" ng-change="filter()">
+	      <label for="search">Search...</label>            
+	    </div>
+	  </div>
+	  <div  ng-if="users.length > 0">
+	    <p>{{message()}}</p>
+      	<table class="bordered striped highlight responsive-table centered">
+	        <thead>
+	          <tr>
+	          		<th ng-repeat="option in validOptions" data-field="{{option.id}}" ng-click="orderTable(option.value)">
+	          			<span>{{option.id | uppercase}}</span>
+									<span ng-show="isOrderBy(option.value)">
+										<i class="material-icons">{{icon_order}}</i>
+									</span>
+	          		</th>
+	          		<th id="accions"></th>
+	          </tr>
+        	</thead>
+		    <tbody id="users-container">
+		    	<tr ng-repeat="user in users | limitTo:usersPerPage:usersBegin">
+		    		<td>{{user.name}}</td>
+		    		<td>{{user.username}}</td>
+		    		<td>{{user.email}}</td>
+		    		<td>{{user.phone}}</td>
+		    		<td>{{user.address.city}}</td>
+		    		<td>{{user.company.name}}</td>
+		    		<td>
+		    			<a ng-href="#/users/{{user.id}}"><i class="material-icons">visibility</i></a>
+		    			<a ng-href="#/users/{{user.id}}/edit" style="color:#4db6ac;"><i class="material-icons">mode_edit</i></a>
+		    		</td>
+		    	</tr>
+		    </tbody>
+	    </table>
+	  </div>
+	  <div ng-show="users.length==0">
+	    <p>No results</p>
+	  </div>
+	  <ul class="pagination">
+	    <li ng-class="{disabled: isFirstPage(),'waves-effect': !isFirstPage()}">
+	      <a ng-click="changePage(currentPage - 1)">
+	        <i class="material-icons">chevron_left</i>
+	      </a>
+	    </li>
+	    <li ng-repeat="num in numPageArray track by $index" ng-class="{active: isSelect($index+1),'waves-effect': !isSelet($index+1)}">
+	      <a ng-click="changePage($index+1)">{{$index+1}}</a>
+	    </li>
+	    <li ng-class="{disabled: isLastPage(),'waves-effect': !isLastPage()}">
+	      <a ng-click="changePage(currentPage + 1)">
+	        <i class="material-icons">chevron_right</i>
+	      </a>
+	      </li>
+	  </ul>
+	</div>
+</div>
